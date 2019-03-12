@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - sub4",
+            "request": "launch",
+            "mainClass": "se.dennisj.sub4",
+            "projectName": "Cypher"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ViSol",
             "request": "launch",
             "mainClass": "se.dennisj.gui.ViSol",
