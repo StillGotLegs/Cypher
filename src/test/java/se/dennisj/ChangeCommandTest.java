@@ -1,0 +1,26 @@
+package se.dennisj;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import se.dennisj.model.sModel;
+
+public class ChangeCommandTest {
+    String data = "AAABBB";
+    sModel sModel = new sModel(data);
+
+    @Before
+    public void SetUp(){
+        sModel.changeLetter('A', 'c');
+    }
+
+    @Test
+    public void testUndo(){
+        assertTrue("Change letter fungerar inte " + sModel.getData(), sModel.getData().equals("cccBBB"));
+        sModel.undo();
+        assertTrue("Undo fungerar inte" + sModel.getData(), "AAABBB" == sModel.getData());
+    }
+
+}
