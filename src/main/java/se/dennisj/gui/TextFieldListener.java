@@ -3,23 +3,23 @@ package se.dennisj.gui;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import se.dennisj.model.sModel;
+import se.dennisj.model.SubstitutionModel;
 
 public class TextFieldListener implements ActionListener {
     private char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     private String text;
-    private sModel sModel;
+    private SubstitutionModel SubstitutionModel;
     private char c, orgLetter;
 
-    public TextFieldListener(sModel sModel, char orgLetter){
-        this.sModel = sModel;
+    public TextFieldListener(SubstitutionModel SubstitutionModel, char orgLetter){
+        this.SubstitutionModel = SubstitutionModel;
         this.orgLetter = orgLetter;
     }
 
     public void actionPerformed(ActionEvent e) {
         text = e.getActionCommand();
         if(checkAlphabet(text)){
-            sModel.changeLetter(orgLetter, c);
+            SubstitutionModel.changeLetter(orgLetter, c);
         }
     }
 

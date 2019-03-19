@@ -6,18 +6,18 @@ import java.awt.event.KeyEvent;
 import javax.swing.JTextField;
 import javax.swing.ToolTipManager;
 
-import se.dennisj.model.sModel;
+import se.dennisj.model.SubstitutionModel;
 
 
 public class SubSolTextField extends JTextField {
     private char label;
-    private sModel sModel;
+    private SubstitutionModel SubstitutionModel;
     private static final char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 
-    public SubSolTextField(char label, sModel sModel){
+    public SubSolTextField(char label, SubstitutionModel SubstitutionModel){
         super();
         this.label = label;
-        this.sModel = sModel;
+        this.SubstitutionModel = SubstitutionModel;
         ToolTipManager.sharedInstance().setDismissDelay(Integer.MAX_VALUE);
 
         addKeyListener(new KeyAdapter() {
@@ -34,9 +34,9 @@ public class SubSolTextField extends JTextField {
         char c = e.getKeyChar();
 
         if(checkAlphabet(c)){
-            sModel.changeLetter(label, c);
+            SubstitutionModel.changeLetter(label, c);
         } else {
-            sModel.changeLetter(label, '\u0000');
+            SubstitutionModel.changeLetter(label, '\u0000');
         }
     }
 

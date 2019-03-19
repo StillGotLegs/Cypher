@@ -5,22 +5,22 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import se.dennisj.model.sModel;
+import se.dennisj.model.SubstitutionModel;
 
 public class ChangeCommandTest {
     String data = "AAABBB";
-    sModel sModel = new sModel(data);
+    SubstitutionModel SubstitutionModel = new SubstitutionModel(data);
 
     @Before
     public void SetUp(){
-        sModel.changeLetter('A', 'c');
+        SubstitutionModel.changeLetter('A', 'c');
     }
 
     @Test
     public void testUndo(){
-        assertTrue("Change letter fungerar inte " + sModel.getData(), sModel.getData().equals("cccBBB"));
-        sModel.undo();
-        assertTrue("Undo fungerar inte" + sModel.getData(), "AAABBB" == sModel.getData());
+        assertTrue("Change letter fungerar inte " + SubstitutionModel.getData(), SubstitutionModel.getData().equals("cccBBB"));
+        SubstitutionModel.undo();
+        assertTrue("Undo fungerar inte" + SubstitutionModel.getData(), "AAABBB" == SubstitutionModel.getData());
     }
 
 }

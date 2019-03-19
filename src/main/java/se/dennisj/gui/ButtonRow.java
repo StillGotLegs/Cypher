@@ -5,19 +5,19 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import se.dennisj.model.sModel;
+import se.dennisj.model.SubstitutionModel;
 
 public class ButtonRow extends JPanel {
 
-    public ButtonRow(sModel sModel){
+    public ButtonRow(SubstitutionModel SubstitutionModel){
         super(new GridLayout(1, 2));
 
         JButton undoButton = new JButton("Undo");
-        undoButton.addActionListener(new UndoButtonListener(sModel));
+        undoButton.addActionListener(new UndoButtonListener(SubstitutionModel));
         add(undoButton);
 
         JButton redoButton = new JButton("Redo");
-        redoButton.addActionListener(new RedoButtonListener(sModel));
+        redoButton.addActionListener(new RedoButtonListener(SubstitutionModel));
         add(redoButton);
     }
 }

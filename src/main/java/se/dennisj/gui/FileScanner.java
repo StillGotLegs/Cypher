@@ -32,7 +32,7 @@ public class FileScanner {
         while (scan.hasNextLine()) {
             s = s.concat(scan.next());
         }
-        return s.toUpperCase();
+        return s;
     }
 
 }

@@ -2,7 +2,7 @@ package se.dennisj.model;
 
 import java.util.*;
 
-public class sModel extends Observable {
+public class SubstitutionModel extends Observable {
 
     private String data, orgData;
     private Map<Character, Character> changes = new TreeMap<>();
@@ -14,7 +14,7 @@ public class sModel extends Observable {
     private Double[] standardFrequencies = {8.1 , 1.6, 3.2, 3.7, 12.3, 2.3, 1.6, 5.1, 7.2, 0.1, 0.5, 4.0, 2.3, 7.2, 7.9,
             2.3, 0.2, 6.0, 6.6, 9.6, 3.1, 0.9, 2.0, 0.2, 1.9, 0.1};
 
-    public sModel(String data){
+    public SubstitutionModel(String data){
         this.data = data.toUpperCase();
         orgData = data;
         fa = new FrequencyAnalyser(data);

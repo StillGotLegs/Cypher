@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.text.DefaultStyledDocument;
 import javax.swing.text.StyledDocument;
 
-import se.dennisj.model.sModel;
+import se.dennisj.model.SubstitutionModel;
 
 
 
@@ -22,7 +22,7 @@ public class SubSol extends JFrame  {
         super("Substitution Solver");
         FileScanner fs = new FileScanner();
         String data = fs.getString();
-        sModel sModel = new sModel(data);
+        SubstitutionModel SubstitutionModel = new SubstitutionModel(data.toUpperCase());
         setVisible(true);
         StyledDocument doc = new DefaultStyledDocument();
         SubJTextPane textArea = new SubJTextPane(doc);
@@ -31,10 +31,10 @@ public class SubSol extends JFrame  {
         textArea.setText(data);
         textArea.setEditable(false);
         add(NORTH, textArea);
-        textSquare textSquare = new textSquare(sModel);
-        add(SOUTH, new ButtonRow(sModel));
+        textSquare textSquare = new textSquare(SubstitutionModel);
+        add(SOUTH, new ButtonRow(SubstitutionModel));
         ModelObserver mo = new ModelObserver(textArea);
-        sModel.addObserver(mo);
+        SubstitutionModel.addObserver(mo);
         add(CENTER, textSquare);
         pack();
         setResizable(true);

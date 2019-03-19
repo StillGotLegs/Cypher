@@ -6,7 +6,7 @@ import java.util.Observer;
 
 import javax.swing.SwingUtilities;
 
-import se.dennisj.model.sModel;
+import se.dennisj.model.SubstitutionModel;
 
 public class TextFieldObserver implements Observer {
     private Map<Character, SubSolTextField> textFields;
@@ -14,11 +14,11 @@ public class TextFieldObserver implements Observer {
     private Map<Character, Double> thisFrequency;
     private Map<Character, Double> standardFrequency;
 
-    public TextFieldObserver(Map<Character, SubSolTextField> textFields, sModel sModel){
+    public TextFieldObserver(Map<Character, SubSolTextField> textFields, SubstitutionModel SubstitutionModel){
         this.textFields = textFields;
-        changes = sModel.getChanges();
-        thisFrequency = sModel.getThisFrequency();
-        standardFrequency = sModel.getStandardFrequency();
+        changes = SubstitutionModel.getChanges();
+        thisFrequency = SubstitutionModel.getThisFrequency();
+        standardFrequency = SubstitutionModel.getStandardFrequency();
 
     }
 

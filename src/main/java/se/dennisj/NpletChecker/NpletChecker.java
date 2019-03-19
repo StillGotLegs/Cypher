@@ -1,4 +1,4 @@
-package se.dennisj;
+package se.dennisj.NpletChecker;
 
 import java.util.Map;
 import java.util.TreeMap;

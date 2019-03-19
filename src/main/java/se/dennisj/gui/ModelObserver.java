@@ -5,7 +5,7 @@ import java.util.Observer;
 
 import javax.swing.JTextPane;
 
-import se.dennisj.model.sModel;
+import se.dennisj.model.SubstitutionModel;
 
 public class ModelObserver implements Observer {
     private JTextPane textArea;
@@ -15,6 +15,6 @@ public class ModelObserver implements Observer {
     }
 
     public void update(Observable o, Object arg) {
-        textArea.setText(((sModel)o).getData());
+        textArea.setText(((SubstitutionModel)o).getData());
     }
 }
